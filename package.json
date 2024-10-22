@@ -1,0 +1,79 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "Management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "rimraf dist && tsc",
+    "start:dev": "ts-node src/index.ts",
+    "start:local": "tsx watch src/index.ts",
+    "lint": "eslint src/**",
+    "lint:fix": "eslint src/** --fix --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/nodemailer": "^6.4.15",
+    "@types/stripe": "^8.0.416",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14",
+    "peer": "^1.0.2",
+    "redis": "^4.7.0",
+    "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "stripe": "^16.8.0",
+    "tsx": "^4.15.7",
+    "uuid": "^10.0.0",
+    "webrtc-adapter": "^9.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.9",
+    "@types/node-cron": "^3.0.11",
+    "@types/socket.io": "^3.0.1",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.6.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^7.14.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint:fix",
+      "npm run format"
+    ],
+    "*.json": [
+      "npm run format"
+    ],
+    "*.md": [
+      "npm run format"
+    ]
+  }
+}
